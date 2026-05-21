@@ -222,18 +222,17 @@
 	        <p>&copy; 2025 Elegance. All rights reserved.</p>
 	    </footer>
 	</body>
-	<!-- <script type='text/javascript'>
+	<script type='text/javascript'>
 		function initEmbeddedMessaging() {
 			try {
-				agentforce_messaging.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-				agentforce_messaging.settings.devMode = true;
+				embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 	
-				agentforce_messaging.init(
-					'00Dfi8000019SKd',
-					'cwc_dep_1',
-					'https://orgfarm-d5cbd96556.my.site-com.k5ajkh4cpsre07sea6ruac6o7.wb.crm.dev:6101/ESWCWC1772034949390',
+				embeddedservice_bootstrap.init(
+					'00Dxx00ZDO3Bbqa',
+					'Channel1',
+					'https://orgfarm-aee37b4009.my.site-com.cii-10-33-248-162.ci.crm.dev:6101/ESWChannel11779385019581',
 					{
-						scrt2URL: 'https://orgfarm-ddb8ab9787.demo.test1.my.pc-rnd.salesforce-scrt.com'
+						scrt2URL: 'http://orgfarm-aee37b4009.my.salesforce-scrt-com.cii-10-33-248-162.ci.crm.dev'
 					}
 				);
 			} catch (err) {
@@ -241,8 +240,8 @@
 			}
 		};
 	</script>
-	<script type='text/javascript' src='https://orgfarm-d5cbd96556.my.site-com.k5ajkh4cpsre07sea6ruac6o7.wb.crm.dev:6101/ESWCWC1772034949390/assets/js/init.js' onload='initEmbeddedMessaging()'></script> -->
-	<script type='text/javascript' 
+	<script type='text/javascript' src='https://orgfarm-aee37b4009.my.site-com.cii-10-33-248-162.ci.crm.dev:6101/ESWChannel11779385019581/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+	<!-- <script type='text/javascript' 
              id='init-agentforce-messaging' 
              src='https://test-service.force.com/embeddedservice/agentforcemessaging/0.3/init.js' 
              onload='agentforce_messaging.init({
@@ -253,5 +252,5 @@
                     },
                     uiConfiguration: {}
             });'>
-	</script>
+	</script> -->
 </html>
