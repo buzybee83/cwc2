@@ -1,256 +1,140 @@
-
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
-	<head>
-	    <meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <title>Elegant Landing | CWC 2</title>
-	    <style>
-	        * {
-	            margin: 0;
-	            padding: 0;
-	            box-sizing: border-box;
-	        }
-	
-	        body {
-	            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-	            line-height: 1.6;
-	            color: #333;
-	            overflow-x: hidden;
-	        }
-	
-	        /* Hero Section */
-	        .hero {
-	            min-height: 85vh;
-	            display: flex;
-	            align-items: center;
-	            justify-content: center;
-	            background: linear-gradient(135deg, #410d75 0%, #5672f0 100%);
-	            position: relative;
-	            overflow: hidden;
-	        }
-	
-	        .hero::before {
-	            content: '';
-	            position: absolute;
-	            top: 0;
-	            left: 0;
-	            right: 0;
-	            bottom: 0;
-	            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
-	            animation: float 20s linear infinite;
-	        }
-	
-	        @keyframes float {
-	            from { transform: translateY(0); }
-	            to { transform: translateY(-100px); }
-	        }
-	
-	        .hero-content {
-	            text-align: center;
-	            color: white;
-	            z-index: 1;
-	            padding: 2rem;
-	            max-width: 800px;
-	            animation: fadeInUp 1s ease-out;
-	        }
-	
-	        @keyframes fadeInUp {
-	            from {
-	                opacity: 0;
-	                transform: translateY(30px);
-	            }
-	            to {
-	                opacity: 1;
-	                transform: translateY(0);
-	            }
-	        }
-	
-	        h1 {
-	            font-size: 3.5rem;
-	            font-weight: 700;
-	            margin-bottom: 1.5rem;
-	            letter-spacing: -1px;
-	        }
-	
-	        .subtitle {
-	            font-size: 1.3rem;
-	            margin-bottom: 2.5rem;
-	            opacity: 0.95;
-	            font-weight: 300;
-	        }
-	
-	        .cta-button {
-	            display: inline-block;
-	            padding: 1rem 2.5rem;
-	            background: white;
-	            color: #667eea;
-	            text-decoration: none;
-	            border-radius: 50px;
-	            font-weight: 600;
-	            font-size: 1.1rem;
-	            transition: all 0.3s ease;
-	            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-	        }
-	
-	        .cta-button:hover {
-	            transform: translateY(-3px);
-	            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-	        }
-	
-	        /* Features Section */
-	        .features {
-	            padding: 5rem 2rem;
-	            background: #f8f9fa;
-	        }
-	
-	        .container {
-	            max-width: 1200px;
-	            margin: 0 auto;
-	        }
-	
-	        .section-title {
-	            text-align: center;
-	            font-size: 2.5rem;
-	            margin-bottom: 3rem;
-	            color: #333;
-	        }
-	
-	        .features-grid {
-	            display: grid;
-	            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	            gap: 2rem;
-	        }
-	
-	        .feature-card {
-	            background: white;
-	            padding: 2rem;
-	            border-radius: 15px;
-	            text-align: center;
-	            transition: transform 0.3s ease, box-shadow 0.3s ease;
-	            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-	        }
-	
-	        .feature-card:hover {
-	            transform: translateY(-10px);
-	            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-	        }
-	
-	        .feature-icon {
-	            width: 70px;
-	            height: 70px;
-	            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-	            border-radius: 50%;
-	            display: flex;
-	            align-items: center;
-	            justify-content: center;
-	            margin: 0 auto 1.5rem;
-	            font-size: 2rem;
-	        }
-	
-	        .feature-title {
-	            font-size: 1.4rem;
-	            margin-bottom: 1rem;
-	            color: #333;
-	        }
-	
-	        .feature-description {
-	            color: #666;
-	            line-height: 1.7;
-	        }
-	
-	        /* Footer */
-	        footer {
-	            background: #2d3748;
-	            color: white;
-	            text-align: center;
-	            padding: 2rem;
-	        }
-	
-	        /* Responsive */
-	        @media (max-width: 768px) {
-	            h1 {
-	                font-size: 2.5rem;
-	            }
-	
-	            .subtitle {
-	                font-size: 1.1rem;
-	            }
-	
-	            .section-title {
-	                font-size: 2rem;
-	            }
-	        }
-	    </style>
-	</head>
-	<body>
-	    <!-- Hero Section -->
-	    <section class="hero">
-	        <div class="hero-content">
-	            <h1>Welcome to CWC 2</h1>
-	            <p class="subtitle">Experience simplicity and beauty in perfect harmony</p>
-	            <a href="#features" class="cta-button">Get Started</a>
-	        </div>
-	    </section>
-	
-	    <!-- Features Section -->
-	    <section class="features" id="features">
-	        <div class="container">
-	            <h2 class="section-title">Why Choose Us</h2>
-	            <div class="features-grid">
-	                <div class="feature-card">
-	                    <div class="feature-icon">⚡</div>
-	                    <h3 class="feature-title">Lightning Fast</h3>
-	                    <p class="feature-description">Optimized for speed and performance to deliver the best user experience possible.</p>
-	                </div>
-	                <div class="feature-card">
-	                    <div class="feature-icon">🎨</div>
-	                    <h3 class="feature-title">Beautiful Design</h3>
-	                    <p class="feature-description">Carefully crafted with attention to detail and modern design principles.</p>
-	                </div>
-	                <div class="feature-card">
-	                    <div class="feature-icon">🔒</div>
-	                    <h3 class="feature-title">Secure & Safe</h3>
-	                    <p class="feature-description">Your data is protected with industry-leading security measures.</p>
-	                </div>
-	            </div>
-	        </div>
-	    </section>
-	
-	    <!-- Footer -->
-	    <footer>
-	        <p>&copy; 2025 Elegance. All rights reserved.</p>
-	    </footer>
-	</body>
-	<script type='text/javascript'>
-		function initEmbeddedMessaging() {
-			try {
-				embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-	
-				embeddedservice_bootstrap.init(
-					'00DVW000006qha5',
-					'Food_Options',
-					'https://orgfarm-aee37b4009.my.site-com.cii-10-33-248-162.ci.crm.dev:6101/ESWChannel11779385019581',
-					{
-						scrt2URL: 'https://orgfarm-66ca03de5b.test1.my.pc-rnd.salesforce-scrt.com'
-					}
-				);
-			} catch (err) {
-				console.error('Error loading Embedded Messaging: ', err);
-			}
-		};
-	</script>
-	<script type='text/javascript' src='https://orgfarm-aee37b4009.my.site-com.cii-10-33-248-162.ci.crm.dev:6101/ESWChannel11779385019581/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-	<!-- <script type='text/javascript' 
-             id='init-agentforce-messaging' 
-             src='https://test-service.force.com/embeddedservice/agentforcemessaging/0.3/init.js' 
-             onload='agentforce_messaging.init({
-                    siteUrl: "buzybee83.github.io",
-                    agentApiConfiguration: {
-                        agentId: "0Xxxx000000003FCAQ", 
-                        domainUrl: "https://orgfarm-8b1574892b.my.salesforce-com.zmc803stncgt0w4krmmmg.wc.crm.dev:6101"
-                    },
-                    uiConfiguration: {}
-            });'>
-	</script> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Williams-Sonoma</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Promo Banner -->
+    <div class="promo-banner">
+        <p>Free Shipping on Orders Over $49</p>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <!-- Top Navigation Bar -->
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-links">
+                        <a href="#stores">Find a Store</a>
+                        <a href="#customer-service">Customer Service</a>
+                        <a href="#gift-registry">Gift Registry</a>
+                    </div>
+                    <div class="header-actions">
+                        <a href="#account">Sign In / Create Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <h1>WILLIAMS SONOMA</h1>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search for products...">
+                        <button type="button">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Header Icons -->
+                    <div class="header-icons">
+                        <a href="#stores" class="icon-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>STORES</span>
+                        </a>
+                        <a href="#wishlist" class="icon-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                            <span>WISH LIST</span>
+                        </a>
+                        <a href="#cart" class="icon-link cart">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span class="cart-count">0</span>
+                            <span>CART</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="#new">NEW</a></li>
+                    <li><a href="#cookware">COOKWARE</a></li>
+                    <li><a href="#cutlery">CUTLERY</a></li>
+                    <li><a href="#electrics">ELECTRICS</a></li>
+                    <li><a href="#tabletop">TABLETOP</a></li>
+                    <li><a href="#food">FOOD</a></li>
+                    <li><a href="#outdoor">OUTDOOR</a></li>
+                    <li><a href="#sale" class="sale-link">SALE</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section - Main Banner -->
+    <section class="hero-section">
+        <div class="hero-banner">
+            <img src="images/banner.png" alt="Williams Sonoma Main Banner">
+        </div>
+    </section>
+
+    <!-- Product Grid Section -->
+    <section class="product-grid-section">
+        <div class="container-full">
+            <div class="product-grid">
+                <!-- Large Item - Outdoor Cooking (spans 2 rows, left) -->
+                <div class="grid-item large">
+                    <img src="images/014.avif" alt="Outdoor Cooking Starts Here">
+                </div>
+
+                <!-- Top Right - Espresso Machines -->
+                <div class="grid-item">
+                    <img src="images/003.avif" alt="Espresso Machines">
+                </div>
+
+                <!-- Top Far Right - Grill Prep -->
+                <div class="grid-item">
+                    <img src="images/016.avif" alt="Shop Grill Prep & Marinate Trays">
+                </div>
+
+                <!-- Bottom Middle - Serving Trays -->
+                <div class="grid-item">
+                    <img src="images/004.avif" alt="Shop Serving Trays">
+                </div>
+
+                <!-- Bottom Right - Fieldbar -->
+                <div class="grid-item">
+                    <img src="images/005.avif" alt="Shop Fieldbar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
 </html>
