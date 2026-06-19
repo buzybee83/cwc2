@@ -58,7 +58,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-// Initialize
-console.log('Williams-Sonoma Product Grid - Ready');
-console.log('6 product tiles loaded');
